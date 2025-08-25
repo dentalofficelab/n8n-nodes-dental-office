@@ -1,0 +1,56 @@
+{
+	"name": "n8n-nodes-dental-office",
+	"version": "0.1.0",
+	"description": "n8n node to integrate with Dental Office Cloud API",
+	"license": "MIT",
+	"homepage": "https://n8n.io",
+	"author": {
+		"name": "Marcos Junior",
+		"email": "marcos.junior@dentaloffice.com.br"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dental-office/n8n-nodes-dental-office.git"
+	},
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"dental-office",
+		"api",
+		"integration"
+	],
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc && gulp build:icons",
+		"dev": "tsc --watch",
+		"format": "prettier nodes credentials --write",
+		"lint": "eslint nodes/**/*.ts credentials/**/*.ts",
+		"lintfix": "eslint nodes credentials package.json --fix",
+		"prepublishOnly": "npm run build && npm run lint -s"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/DentalOfficeApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/DentalOffice/DentalOffice.node.js"
+		]
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "~5.45.0",
+		"@typescript-eslint/parser": "~5.45.0",
+		"eslint": "~8.29.0",
+		"eslint-plugin-n8n-nodes-base": "~1.11.0",
+		"gulp": "^4.0.2",
+		"n8n-workflow": "*",
+		"prettier": "^2.7.1",
+		"typescript": "~4.8.4"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}
