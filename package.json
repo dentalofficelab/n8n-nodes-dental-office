@@ -10,7 +10,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dental-office/n8n-nodes-dental-office.git"
+		"url": "git+https://github.com/dentalofficelab/n8n-nodes-dental-office.git"
 	},
 	"keywords": [
 		"n8n-community-node-package",
